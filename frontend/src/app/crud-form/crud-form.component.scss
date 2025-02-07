@@ -1,0 +1,22 @@
+.username {
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: blue;
+      transition: 0.2s;
+    }
+  }
+.page_name {
+  padding: 15px 0 0 10px;
+  margin:  -10px 0 0 -10px;
+  font-size: 55px;
+  width: 500px;
+  height: 30px;
+  border-top-left-radius: 25px;
+  border: 10px solid #d2d2ef;
+  border-bottom: none;
+  border-right: none;
+
+}

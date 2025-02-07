@@ -1,0 +1,12 @@
+<div *ngIf="userData; else loading">
+  <h2>Информация о пользователе</h2>
+  <p><strong>Имя пользователя:</strong> {{ userData.username }}</p>
+  <p><strong>Email:</strong> {{ userData.email }}</p>
+  <p><strong>Телефон:</strong> {{ userData.phone }}</p>
+  <button mat-flat-button color="primary" (click)="goBack()">Назад</button>
+
+</div>
+
+<ng-template #loading>
+  <p>Загрузка данных...</p>
+</ng-template>

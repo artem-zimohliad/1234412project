@@ -1,0 +1,18 @@
+.aside-main-flex-container {
+    display: flex;
+    flex-direction: row;
+    .aside-bar {
+        padding: 10px;
+        background-color: #d2d2ef;
+    }
+    .aside-bar-button{
+        margin: 10px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.header_block {
+    background-color: #d2d2ef;
+    height: 70px;
+}

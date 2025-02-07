@@ -1,0 +1,39 @@
+<header>
+  <div class="header_block"><h1>Angular Router with Sidebar</h1></div>
+</header>
+
+<div class="aside-main-flex-container">
+  <aside class="aside-bar">
+    <div class="aside-bar-button">
+      <button
+        mat-flat-button
+        (click)="redirect('/user')"
+        routerLinkActive="active"
+      >
+        Register a user
+      </button>
+      <button
+        mat-flat-button
+        (click)="redirect('/crud')"
+        routerLinkActive="active"
+      >
+        User list
+      </button>
+      <button mat-raised-button routerLinkActive="active">
+        Inactive button
+      </button>
+      <button mat-raised-button routerLinkActive="active">
+        Inactive button
+      </button>
+      <button mat-raised-button routerLinkActive="active">
+        Inactive button
+      </button>
+    </div>
+  </aside>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<footer></footer>
