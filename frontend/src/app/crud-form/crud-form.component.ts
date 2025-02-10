@@ -124,9 +124,7 @@ export class CrudFormComponent implements OnInit {
     this.showTable = true;
   }
 
-  toggleSortOrder(): void {
-    this.isAscending = !this.isAscending;
-  }
+
 
   viewUserDetails(): void {
     this.selectedUser = {};

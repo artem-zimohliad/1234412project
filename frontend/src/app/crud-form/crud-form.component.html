@@ -1,9 +1,6 @@
 <div *ngIf="users.data && users.data.length > 0">
   <p class="page_name">User list:</p>
   <div *ngIf="showTable">
-    <button mat-button (click)="toggleSortOrder()">
-      Сортировать {{ isAscending ? "по возрастанию" : "по убыванию" }}
-    </button>
     <table mat-table [dataSource]="users" matSort>
       <!-- Username -->
       <ng-container matColumnDef="username">

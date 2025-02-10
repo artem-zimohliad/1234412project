@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';  // Добавьте импорт Router
+import { Router } from '@angular/router'; 
 
 
 
@@ -39,6 +39,6 @@ export class UserDetailComponent implements OnInit {
     );
   }
   goBack() {
-    this.router.navigate(['crud']); // Перенаправление на главную страницу
+    this.router.navigate(['crud']); 
   }
 }

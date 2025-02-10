@@ -28,8 +28,8 @@ export class UserFormComponent {
   }
 
   onSubmit(form: NgForm) {
-    const randomKey = Math.floor(100 + Math.random() * 900);  // Генерация случайного ключа
-    const userData = { user_key: randomKey, ...form.value };  // Добавляем ключ в объект
+    const randomKey = Math.floor(100 + Math.random() * 900); 
+    const userData = { user_key: randomKey, ...form.value }; 
     console.log(userData);
   
     fetch('http://localhost:3000/app/user', {
@@ -37,7 +37,7 @@ export class UserFormComponent {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(userData),  // Отправляем данные с ключом
+      body: JSON.stringify(userData),
     })
       .then((response) => response.json())
       .then((data) => {

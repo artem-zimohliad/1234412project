@@ -36,7 +36,6 @@ function connectToDatabase(retries = 5) {
 
 connectToDatabase();
 
-// Добавить нового пользователя
 app.post("/app/user", (req, res) => {
   const { user_key, username, password, email, phone } = req.body;
 
@@ -54,10 +53,9 @@ app.post("/app/user", (req, res) => {
   });
 });
 
-// Получить всех пользователей
 app.get("/app/user", (req, res) => {
-  const page = parseInt(req.query._page, 10) || 1; // Текущая страница
-  const limit = parseInt(req.query._limit, 10) || 5; // Количество записей на странице
+  const page = parseInt(req.query._page, 10) || 1; 
+  const limit = parseInt(req.query._limit, 10) || 5; 
   const offset = (page - 1) * limit;
 
   const query = "SELECT * FROM users LIMIT ? OFFSET ?";
@@ -67,7 +65,6 @@ app.get("/app/user", (req, res) => {
       return res.status(500).json({ message: "Ошибка сервера" });
     }
 
-    // Считаем общее количество пользователей для подсчёта страниц
     connection.query("SELECT COUNT(*) as count FROM users", (countErr, countResults) => {
       if (countErr) {
         console.error("Ошибка при подсчёте пользователей:", countErr);
@@ -81,7 +78,6 @@ app.get("/app/user", (req, res) => {
 });
 
 
-// Получить пользователя по ID
 app.get("/app/user/:id", (req, res) => {
   const { id } = req.params;
   const query = "SELECT * FROM users WHERE id = ?";
@@ -97,7 +93,6 @@ app.get("/app/user/:id", (req, res) => {
   });
 });
 
-// Обновить данные пользователя
 app.put("/app/user/:id", (req, res) => {
   const { id } = req.params;
   const { username, password, email, phone } = req.body;
@@ -119,7 +114,6 @@ app.put("/app/user/:id", (req, res) => {
   });
 });
 
-// Удалить пользователя
 app.delete("/app/user/:id", (req, res) => {
   const { id } = req.params;
 
